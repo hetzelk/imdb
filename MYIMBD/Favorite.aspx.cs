@@ -47,24 +47,19 @@ namespace MYIMBD //MovieClassDataContext
         public void FavMovieDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             FavMovieDropdown.DataBind();
-            Title2.Text = favs[FavMovieDropdown.SelectedIndex].Title;
-            Year2.Text = favs[FavMovieDropdown.SelectedIndex].Year;
-            Rated2.Text = favs[FavMovieDropdown.SelectedIndex].Rated;
-            Released2.Text = favs[FavMovieDropdown.SelectedIndex].Released;
-            /*
-            Title2.Text = string.Format("Title: {0}", (string)dynObj["Title"]);
-            Year2.Text = string.Format("Year: {0}", (string)dynObj["Year"]);
-            Rated2.Text = string.Format("Rated: {0}", (string)dynObj["Rated"]);
-            Released2.Text = string.Format("Released: {0}", (string)dynObj["Released"]);
-            Runtime2.Text = string.Format("Runtime: {0}", (string)dynObj["Runtime"]);
-            Genre2.Text = string.Format("Genre: {0}", (string)dynObj["Genre"]);
-            Plot2.Text = string.Format("Plot: {0}", (string)dynObj["Plot"]);
-            Director2.Text = string.Format("Director: {0}", (string)dynObj["Director"]);
-            Writer2.Text = string.Format("Writer: {0}", (string)dynObj["Writer"]);
-            IMDbRating2.Text = string.Format("IMDb Rating: {0}", (string)dynObj["imdbRating"]);
-            PosterUrl2.Text = string.Format("Poster Url: {0}", (string)dynObj["Poster"]);
-
-            movieposter2.Attributes["src"] = (string)dynObj["Poster"];*/
+            Title1.Text = favs[FavMovieDropdown.SelectedIndex].Title;
+            Year.Text = favs[FavMovieDropdown.SelectedIndex].Year;
+            Rated.Text = favs[FavMovieDropdown.SelectedIndex].Rated;
+            Released.Text = favs[FavMovieDropdown.SelectedIndex].Released;
+            Runtime.Text = favs[FavMovieDropdown.SelectedIndex].Runtime;
+            Genre.Text = favs[FavMovieDropdown.SelectedIndex].Genre;
+            Plot.Text = favs[FavMovieDropdown.SelectedIndex].Plot;
+            Director.Text = favs[FavMovieDropdown.SelectedIndex].Director;
+            Writer.Text = favs[FavMovieDropdown.SelectedIndex].Writer;
+            IMDbRating.Text = favs[FavMovieDropdown.SelectedIndex].IMDbRating;
+            movieposter.Attributes["src"] = favs[FavMovieDropdown.SelectedIndex].PosterUrl;
+            
+            
         }
     }
 
