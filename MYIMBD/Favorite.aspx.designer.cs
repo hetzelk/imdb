@@ -10,132 +10,132 @@
 namespace MYIMBD {
     
     
-    public partial class Search {
+    public partial class Favorite {
         
         /// <summary>
-        /// SearchTitle control.
+        /// FavMovieDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchTitle;
+        protected global::System.Web.UI.WebControls.DropDownList FavMovieDropdown;
         
         /// <summary>
-        /// Title1 control.
+        /// Title2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Title1;
+        protected global::System.Web.UI.WebControls.Label Title2;
         
         /// <summary>
-        /// Year control.
+        /// Year2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Year;
+        protected global::System.Web.UI.WebControls.Label Year2;
         
         /// <summary>
-        /// Rated control.
+        /// Rated2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Rated;
+        protected global::System.Web.UI.WebControls.Label Rated2;
         
         /// <summary>
-        /// Released control.
+        /// Released2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Released;
+        protected global::System.Web.UI.WebControls.Label Released2;
         
         /// <summary>
-        /// Runtime control.
+        /// Runtime2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Runtime;
+        protected global::System.Web.UI.WebControls.Label Runtime2;
         
         /// <summary>
-        /// Genre control.
+        /// Genre2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Genre;
+        protected global::System.Web.UI.WebControls.Label Genre2;
         
         /// <summary>
-        /// Plot control.
+        /// Plot2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Plot;
+        protected global::System.Web.UI.WebControls.Label Plot2;
         
         /// <summary>
-        /// Director control.
+        /// Director2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Director;
+        protected global::System.Web.UI.WebControls.Label Director2;
         
         /// <summary>
-        /// Writer control.
+        /// Writer2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Writer;
+        protected global::System.Web.UI.WebControls.Label Writer2;
         
         /// <summary>
-        /// IMDbRating control.
+        /// IMDbRating2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IMDbRating;
+        protected global::System.Web.UI.WebControls.Label IMDbRating2;
         
         /// <summary>
-        /// PosterUrl control.
+        /// PosterUrl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PosterUrl;
+        protected global::System.Web.UI.WebControls.Label PosterUrl2;
         
         /// <summary>
-        /// Url control.
+        /// Url2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Url;
+        protected global::System.Web.UI.WebControls.Label Url2;
         
         /// <summary>
-        /// movieposter control.
+        /// movieposter2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image movieposter;
+        protected global::System.Web.UI.WebControls.Image movieposter2;
     }
 }

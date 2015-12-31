@@ -29,50 +29,62 @@ namespace MYIMBD
 
         public int getHighFav()
         {
-            favs = new List<Models.FavoriteMovy>();
-            int favid = 0;
-            var q =
-                    from c in favs
-                    where c.P_Id < 100000
-                    select c;
-            foreach (Models.FavoriteMovy c in q)
+            string stmt = "SELECT COUNT(*) FROM dbo.FavoriteMovies";
+            int count = 0;
+
+            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = keithlogin1; pwd = keithlogin1; data source = dccmoviestorage.mssql.somee.com; persist security info = True; initial catalog = dccmoviestorage";
+
+            using (SqlConnection thisConnection = new SqlConnection(connectionString))
             {
-                favid += 1;
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    count = (int)cmdCount.ExecuteScalar();
+                    thisConnection.Close();
+                }
             }
-            int highfavid = favid + 1;
-            return highfavid;
+            count++;
+            return count;
         }
 
         public int getHighWant()
         {
-            wants = new List<Models.WantToSeeMovy>();
-            int wantid = 0;
-            var q =
-                    from c in wants
-                    where c.P_Id < 100000
-                    select c;
-            foreach (Models.WantToSeeMovy c in q)
+            string stmt = "SELECT COUNT(*) FROM dbo.WantToSeeMovies";
+            int count = 0;
+
+            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+
+            using (SqlConnection thisConnection = new SqlConnection(connectionString))
             {
-                wantid += 1;
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    count = (int)cmdCount.ExecuteScalar();
+                    thisConnection.Close();
+                }
             }
-            int highwantid = wantid + 1;
-            return highwantid;
+            count++;
+            return count;
         }
 
         public int getHighNew()
         {
-            news = new List<Models.NewReleaseMovy>();
-            int newid = 0;
-            var q =
-                    from c in news
-                    where c.P_Id < 100000
-                    select c;
-            foreach (Models.NewReleaseMovy c in q)
+            string stmt = "SELECT COUNT(*) FROM dbo.NewReleaseMovies";
+            int count = 0;
+
+            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+
+            using (SqlConnection thisConnection = new SqlConnection(connectionString))
             {
-                newid += 1;
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    count = (int)cmdCount.ExecuteScalar();
+                    thisConnection.Close();
+                }
             }
-            int highnewid = newid + 1;
-            return highnewid;
+            count++;
+            return count;
         }
 
         public void SearchFor(object sender, EventArgs e)
@@ -80,28 +92,28 @@ namespace MYIMBD
             string searchtitle = SearchTitle.Text;
             string title = searchtitle.Replace(' ', '+');
             string url = "http://www.omdbapi.com/?t=" + title;
-            Url.Text = url;
+            Url1.Text = url;
             var json = new WebClient().DownloadString(url);
 
             dynamic dynObj = JsonConvert.DeserializeObject(json);
-            Title1.Text = string.Format("Title: {0}", (string)dynObj["Title"]);
-            Year.Text = string.Format("Year: {0}", (string)dynObj["Year"]);
-            Rated.Text = string.Format("Rated: {0}", (string)dynObj["Rated"]);
-            Released.Text = string.Format("Released: {0}", (string)dynObj["Released"]);
-            Runtime.Text = string.Format("Runtime: {0}", (string)dynObj["Runtime"]);
-            Genre.Text = string.Format("Genre: {0}", (string)dynObj["Genre"]);
-            Plot.Text = string.Format("Plot: {0}", (string)dynObj["Plot"]);
-            Director.Text = string.Format("Director: {0}", (string)dynObj["Director"]);
-            Writer.Text = string.Format("Writer: {0}", (string)dynObj["Writer"]);
-            IMDbRating.Text = string.Format("IMDb Rating: {0}", (string)dynObj["imdbRating"]);
-            PosterUrl.Text = string.Format("Poster Url: {0}", (string)dynObj["Poster"]);
+            Title1.Text = string.Format("{0}", (string)dynObj["Title"]);
+            Year1.Text = string.Format("{0}", (string)dynObj["Year"]);
+            Rated1.Text = string.Format("{0}", (string)dynObj["Rated"]);
+            Released1.Text = string.Format("{0}", (string)dynObj["Released"]);
+            Runtime1.Text = string.Format("{0}", (string)dynObj["Runtime"]);
+            Genre1.Text = string.Format("{0}", (string)dynObj["Genre"]);
+            Plot1.Text = string.Format("{0}", (string)dynObj["Plot"]);
+            Director1.Text = string.Format("{0}", (string)dynObj["Director"]);
+            Writer1.Text = string.Format("{0}", (string)dynObj["Writer"]);
+            IMDbRating1.Text = string.Format("{0}", (string)dynObj["imdbRating"]);
+            PosterUrl1.Text = string.Format("{0}", (string)dynObj["Poster"]);
 
-            movieposter.Attributes["src"] = (string)dynObj["Poster"];
+            movieposter1.Attributes["src"] = (string)dynObj["Poster"];
         }
 
         public void addToFavs(object sender, EventArgs e)
         {
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_3; pwd = w7bfccaw49; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = keithlogin1; pwd = keithlogin1; data source = dccmoviestorage.mssql.somee.com; persist security info = True; initial catalog = dccmoviestorage";
             SqlConnection myConnection = new SqlConnection(connectionString);
             myConnection.Open();
 
@@ -111,23 +123,24 @@ namespace MYIMBD
             SqlCommand myCommand = new SqlCommand(query, myConnection);
             myCommand.Parameters.AddWithValue("@P_Id", getHighFav());
             myCommand.Parameters.AddWithValue("@Title", Title1.Text);
-            myCommand.Parameters.AddWithValue("@Year", Year.Text);
-            myCommand.Parameters.AddWithValue("@Rated", Rated.Text);
-            myCommand.Parameters.AddWithValue("@Released", Released.Text);
-            myCommand.Parameters.AddWithValue("@Runtime", Runtime.Text);
-            myCommand.Parameters.AddWithValue("@Genre", Genre.Text);
-            myCommand.Parameters.AddWithValue("@Plot", Plot.Text);
-            myCommand.Parameters.AddWithValue("@Director", Director.Text);
-            myCommand.Parameters.AddWithValue("@Writer", Writer.Text);
-            myCommand.Parameters.AddWithValue("@IMDbRating", IMDbRating.Text);
-            myCommand.Parameters.AddWithValue("@PosterUrl", PosterUrl.Text);
-            myCommand.Parameters.AddWithValue("@Url", Url.Text);
+            myCommand.Parameters.AddWithValue("@Year", Year1.Text);
+            myCommand.Parameters.AddWithValue("@Rated", Rated1.Text);
+            myCommand.Parameters.AddWithValue("@Released", Released1.Text);
+            myCommand.Parameters.AddWithValue("@Runtime", Runtime1.Text);
+            myCommand.Parameters.AddWithValue("@Genre", Genre1.Text);
+            myCommand.Parameters.AddWithValue("@Plot", Plot1.Text);
+            myCommand.Parameters.AddWithValue("@Director", Director1.Text);
+            myCommand.Parameters.AddWithValue("@Writer", Writer1.Text);
+            myCommand.Parameters.AddWithValue("@IMDbRating", IMDbRating1.Text);
+            myCommand.Parameters.AddWithValue("@PosterUrl", PosterUrl1.Text);
+            myCommand.Parameters.AddWithValue("@Url", Url1.Text);
             myCommand.ExecuteNonQuery();
+            myConnection.Close();
         }
 
         public void addToWants(object sender, EventArgs e)
         {
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_3; pwd = w7bfccaw49; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
             SqlConnection myConnection = new SqlConnection(connectionString);
             myConnection.Open();
 
@@ -137,23 +150,24 @@ namespace MYIMBD
             SqlCommand myCommand = new SqlCommand(query, myConnection);
             myCommand.Parameters.AddWithValue("@P_Id", getHighWant());
             myCommand.Parameters.AddWithValue("@Title", Title1.Text);
-            myCommand.Parameters.AddWithValue("@Year", Year.Text);
-            myCommand.Parameters.AddWithValue("@Rated", Rated.Text);
-            myCommand.Parameters.AddWithValue("@Released", Released.Text);
-            myCommand.Parameters.AddWithValue("@Runtime", Runtime.Text);
-            myCommand.Parameters.AddWithValue("@Genre", Genre.Text);
-            myCommand.Parameters.AddWithValue("@Plot", Plot.Text);
-            myCommand.Parameters.AddWithValue("@Director", Director.Text);
-            myCommand.Parameters.AddWithValue("@Writer", Writer.Text);
-            myCommand.Parameters.AddWithValue("@IMDbRating", IMDbRating.Text);
-            myCommand.Parameters.AddWithValue("@PosterUrl", PosterUrl.Text);
-            myCommand.Parameters.AddWithValue("@Url", Url.Text);
+            myCommand.Parameters.AddWithValue("@Year", Year1.Text);
+            myCommand.Parameters.AddWithValue("@Rated", Rated1.Text);
+            myCommand.Parameters.AddWithValue("@Released", Released1.Text);
+            myCommand.Parameters.AddWithValue("@Runtime", Runtime1.Text);
+            myCommand.Parameters.AddWithValue("@Genre", Genre1.Text);
+            myCommand.Parameters.AddWithValue("@Plot", Plot1.Text);
+            myCommand.Parameters.AddWithValue("@Director", Director1.Text);
+            myCommand.Parameters.AddWithValue("@Writer", Writer1.Text);
+            myCommand.Parameters.AddWithValue("@IMDbRating", IMDbRating1.Text);
+            myCommand.Parameters.AddWithValue("@PosterUrl", PosterUrl1.Text);
+            myCommand.Parameters.AddWithValue("@Url", Url1.Text);
             myCommand.ExecuteNonQuery();
+            myConnection.Close();
         }
 
         public void addToNew(object sender, EventArgs e)
         {
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_3; pwd = w7bfccaw49; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
             SqlConnection myConnection = new SqlConnection(connectionString);
             myConnection.Open();
 
@@ -163,18 +177,19 @@ namespace MYIMBD
             SqlCommand myCommand = new SqlCommand(query, myConnection);
             myCommand.Parameters.AddWithValue("@P_Id", getHighNew());
             myCommand.Parameters.AddWithValue("@Title", Title1.Text);
-            myCommand.Parameters.AddWithValue("@Year", Year.Text);
-            myCommand.Parameters.AddWithValue("@Rated", Rated.Text);
-            myCommand.Parameters.AddWithValue("@Released", Released.Text);
-            myCommand.Parameters.AddWithValue("@Runtime", Runtime.Text);
-            myCommand.Parameters.AddWithValue("@Genre", Genre.Text);
-            myCommand.Parameters.AddWithValue("@Plot", Plot.Text);
-            myCommand.Parameters.AddWithValue("@Director", Director.Text);
-            myCommand.Parameters.AddWithValue("@Writer", Writer.Text);
-            myCommand.Parameters.AddWithValue("@IMDbRating", IMDbRating.Text);
-            myCommand.Parameters.AddWithValue("@PosterUrl", PosterUrl.Text);
-            myCommand.Parameters.AddWithValue("@Url", Url.Text);
+            myCommand.Parameters.AddWithValue("@Year", Year1.Text);
+            myCommand.Parameters.AddWithValue("@Rated", Rated1.Text);
+            myCommand.Parameters.AddWithValue("@Released", Released1.Text);
+            myCommand.Parameters.AddWithValue("@Runtime", Runtime1.Text);
+            myCommand.Parameters.AddWithValue("@Genre", Genre1.Text);
+            myCommand.Parameters.AddWithValue("@Plot", Plot1.Text);
+            myCommand.Parameters.AddWithValue("@Director", Director1.Text);
+            myCommand.Parameters.AddWithValue("@Writer", Writer1.Text);
+            myCommand.Parameters.AddWithValue("@IMDbRating", IMDbRating1.Text);
+            myCommand.Parameters.AddWithValue("@PosterUrl", PosterUrl1.Text);
+            myCommand.Parameters.AddWithValue("@Url", Url1.Text);
             myCommand.ExecuteNonQuery();
+            myConnection.Close();
         }
 
     }
