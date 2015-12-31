@@ -32,7 +32,7 @@ namespace MYIMBD
             string stmt = "SELECT COUNT(*) FROM dbo.FavoriteMovies";
             int count = 0;
 
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = keithlogin1; pwd = keithlogin1; data source = dccmoviestorage.mssql.somee.com; persist security info = True; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";
 
             using (SqlConnection thisConnection = new SqlConnection(connectionString))
             {
@@ -52,7 +52,7 @@ namespace MYIMBD
             string stmt = "SELECT COUNT(*) FROM dbo.WantToSeeMovies";
             int count = 0;
 
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";
 
             using (SqlConnection thisConnection = new SqlConnection(connectionString))
             {
@@ -72,7 +72,7 @@ namespace MYIMBD
             string stmt = "SELECT COUNT(*) FROM dbo.NewReleaseMovies";
             int count = 0;
 
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";
 
             using (SqlConnection thisConnection = new SqlConnection(connectionString))
             {
@@ -113,7 +113,7 @@ namespace MYIMBD
 
         public void addToFavs(object sender, EventArgs e)
         {
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = keithlogin1; pwd = keithlogin1; data source = dccmoviestorage.mssql.somee.com; persist security info = True; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";
             SqlConnection myConnection = new SqlConnection(connectionString);
             myConnection.Open();
 
@@ -140,7 +140,7 @@ namespace MYIMBD
 
         public void addToWants(object sender, EventArgs e)
         {
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";
             SqlConnection myConnection = new SqlConnection(connectionString);
             myConnection.Open();
 
@@ -167,7 +167,7 @@ namespace MYIMBD
 
         public void addToNew(object sender, EventArgs e)
         {
-            string connectionString = "workstation id = dccmoviestorage.mssql.somee.com; packet size = 4096; user id = donaldIMBD_SQLLogin_2; pwd = 123123123; data source = dccmoviestorage.mssql.somee.com; persist security info = False; initial catalog = dccmoviestorage";
+            string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";
             SqlConnection myConnection = new SqlConnection(connectionString);
             myConnection.Open();
 
