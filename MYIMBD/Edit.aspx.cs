@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace MYIMBD
 {
-    public partial class Edit : System.Web.UI.Page
+    public partial class Edit : Page
     {
         public List<Models.FavoriteMovy> favs;
         public List<Models.WantToSeeMovy> wants;
@@ -53,11 +53,13 @@ namespace MYIMBD
                 {
                     favs.Add(c);
                 }
+                if (IsPostBack)
+                {
                     MovieChoiceDropdown.DataSource = favs;
                     MovieChoiceDropdown.DataTextField = "Title";
                     MovieChoiceDropdown.DataValueField = "P_Id";
                     MovieChoiceDropdown.DataBind();
-                
+                }
             }
 
             if (MovieDBDropdown.SelectedValue == "WantToSeeMovies")
@@ -74,11 +76,13 @@ namespace MYIMBD
                 {
                     wants.Add(c);
                 }
+                if (IsPostBack)
+                {
                     MovieChoiceDropdown.DataSource = wants;
                     MovieChoiceDropdown.DataTextField = "Title";
                     MovieChoiceDropdown.DataValueField = "P_Id";
                     MovieChoiceDropdown.DataBind();
-                
+                }
             }
 
             if (MovieDBDropdown.SelectedValue == "NewReleaseMovies")
@@ -95,17 +99,18 @@ namespace MYIMBD
                 {
                     news.Add(c);
                 }
+                if (IsPostBack)
+                {
                     MovieChoiceDropdown.DataSource = news;
                     MovieChoiceDropdown.DataTextField = "Title";
                     MovieChoiceDropdown.DataValueField = "P_Id";
                     MovieChoiceDropdown.DataBind();
-                
+                }
             }
 
         }
             
-
-        public void MovieChoice_SelectedIndexChanged(object sender, EventArgs e)
+        public void MovieChoiceDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (MovieDBDropdown.SelectedValue == "FavoriteMovies")
             {
@@ -124,6 +129,7 @@ namespace MYIMBD
                 MyComments.Text = favs[MovieChoiceDropdown.SelectedIndex].MyComments;
                 movieposter.Attributes["src"] = favs[MovieChoiceDropdown.SelectedIndex].PosterUrl;
             }
+
             if (MovieDBDropdown.SelectedValue == "WantToSeeMovies")
             {
                 MovieChoiceDropdown.DataBind();
@@ -139,6 +145,7 @@ namespace MYIMBD
                 IMDbRating.Text = wants[MovieChoiceDropdown.SelectedIndex].IMDbRating;
                 movieposter.Attributes["src"] = wants[MovieChoiceDropdown.SelectedIndex].PosterUrl;
             }
+
             if (MovieDBDropdown.SelectedValue == "NewReleaseMovies")
             {
                 MovieChoiceDropdown.DataBind();
@@ -184,6 +191,7 @@ namespace MYIMBD
             myCommand.ExecuteNonQuery();
             myConnection.Close();
             }
+
             if (MovieDBDropdown.SelectedValue == "WantToSeeMovies")
             {
                 string connectionString = "workstation id=dccmoviestorage.mssql.somee.com;packet size=4096;user id=donaldIMBD_SQLLogin_3;pwd=w7bfccaw49;data source=dccmoviestorage.mssql.somee.com;persist security info=False;initial catalog=dccmoviestorage";

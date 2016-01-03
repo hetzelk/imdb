@@ -8,7 +8,7 @@
             <p>Pick a DataTable to edit a movie from.</p>
         <asp:DropDownList ID="MovieDBDropdown" runat="server" AutoPostBack="true" OnSelectedIndexChanged="MovieDBDropdown_SelectedIndexChanged" EnableViewState="true" AppendDataBoundItems="true"></asp:DropDownList><br /><br />
             <p>Pick a Movie to edit.</p>
-        <asp:DropDownList ID="MovieChoiceDropdown" runat="server" AutoPostBack="true" OnSelectedIndexChanged="MovieChoice_SelectedIndexChanged" EnableViewState="true" AppendDataBoundItems="true"></asp:DropDownList>
+        <asp:DropDownList ID="MovieChoiceDropdown" runat="server" AutoPostBack="true" OnSelectedIndexChanged="MovieChoiceDropdown_SelectedIndexChanged" EnableViewState="true" AppendDataBoundItems="true"></asp:DropDownList>
 
             <br /><br /><br />
             <asp:Button ID="Update" runat="server" OnClick="Update_Movie" Text="Update Movie" CssClass="btn btn-success" /><br /><br />
