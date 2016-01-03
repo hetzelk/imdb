@@ -10,16 +10,43 @@
 namespace MYIMBD {
     
     
-    public partial class NewReleases {
+    public partial class Edit {
         
         /// <summary>
-        /// NewMovieDropdown control.
+        /// MovieDBDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList NewMovieDropdown;
+        protected global::System.Web.UI.WebControls.DropDownList MovieDBDropdown;
+        
+        /// <summary>
+        /// MovieChoiceDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList MovieChoiceDropdown;
+        
+        /// <summary>
+        /// Update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Update;
+        
+        /// <summary>
+        /// Delete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Delete;
         
         /// <summary>
         /// Title1 control.
@@ -28,7 +55,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Title1;
+        protected global::System.Web.UI.WebControls.TextBox Title1;
         
         /// <summary>
         /// Year control.
@@ -37,7 +64,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Year;
+        protected global::System.Web.UI.WebControls.TextBox Year;
         
         /// <summary>
         /// Rated control.
@@ -46,7 +73,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Rated;
+        protected global::System.Web.UI.WebControls.TextBox Rated;
         
         /// <summary>
         /// Released control.
@@ -55,7 +82,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Released;
+        protected global::System.Web.UI.WebControls.TextBox Released;
         
         /// <summary>
         /// Runtime control.
@@ -64,7 +91,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Runtime;
+        protected global::System.Web.UI.WebControls.TextBox Runtime;
         
         /// <summary>
         /// Genre control.
@@ -73,7 +100,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Genre;
+        protected global::System.Web.UI.WebControls.TextBox Genre;
         
         /// <summary>
         /// Plot control.
@@ -82,7 +109,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Plot;
+        protected global::System.Web.UI.WebControls.TextBox Plot;
         
         /// <summary>
         /// Director control.
@@ -91,7 +118,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Director;
+        protected global::System.Web.UI.WebControls.TextBox Director;
         
         /// <summary>
         /// Writer control.
@@ -100,7 +127,7 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Writer;
+        protected global::System.Web.UI.WebControls.TextBox Writer;
         
         /// <summary>
         /// IMDbRating control.
@@ -109,7 +136,25 @@ namespace MYIMBD {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IMDbRating;
+        protected global::System.Web.UI.WebControls.TextBox IMDbRating;
+        
+        /// <summary>
+        /// MyRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MyRating;
+        
+        /// <summary>
+        /// MyComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MyComments;
         
         /// <summary>
         /// movieposter control.

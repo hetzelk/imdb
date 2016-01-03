@@ -23,10 +23,10 @@ namespace MYIMBD //MovieClassDataContext
             favs = new List<Models.FavoriteMovy>();
             Models.FavoriteMovy empty = new Models.FavoriteMovy();
             favs.Add(empty);
-            var q =
+            var query =
             from c in manager.FavoriteMovies
             select c;
-            foreach (Models.FavoriteMovy c in q)
+            foreach (Models.FavoriteMovy c in query)
             {
                 favs.Add(c);
             }
@@ -41,7 +41,7 @@ namespace MYIMBD //MovieClassDataContext
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         public void FavMovieDropdown_SelectedIndexChanged(object sender, EventArgs e)

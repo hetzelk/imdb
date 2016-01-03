@@ -4,7 +4,7 @@
     <h3>Search through IMDB.</h3>
     <div class="row">
     <div class="form-group">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <asp:TextBox ID="SearchTitle" runat="server" Text="" Placeholder="Search for a Title"/><br /><br />
             <asp:Button runat="server" OnClick="SearchFor" Text="Search" CssClass="btn btn-success" /><br /><br />
             <asp:Button runat="server" OnClick="addToFavs" Text="Add to Favs" CssClass="btn btn-warning" /><br /><br />
@@ -12,7 +12,7 @@
             <asp:Button runat="server" OnClick="addToNew" Text="Add to New Releases" CssClass="btn btn-danger" /><br />
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6">
         Title: <asp:Label ID="Title1" runat="server" Text="Title" CssClass="white"></asp:Label><br />
         Year: <asp:Label ID="Year1" runat="server" Text="Year" CssClass="white"></asp:Label><br />
         Rated: <asp:Label ID="Rated1" runat="server" Text="Rated" CssClass="white"></asp:Label><br />

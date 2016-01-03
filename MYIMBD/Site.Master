@@ -53,6 +53,7 @@
                         <li><a runat="server" href="/Favorite">Favorites</a></li>
                         <li><a runat="server" href="/WantToSee">Want To See</a></li>
                         <li><a runat="server" href="/NewReleases">New Releases</a></li>
+                        <li><a runat="server" href="/Edit">Edit</a></li>
                     </ul>
                 </div>
             </div>

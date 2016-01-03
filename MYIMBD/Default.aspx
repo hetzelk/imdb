@@ -15,10 +15,10 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Want-to-see's</h2>
+            <h2>Want-To-See's</h2>
             <p>These are movies that I want to see.</p>
             <p>
-                <a class="btn btn-default" href="/WantToSee">Want-To-see's</a>
+                <a class="btn btn-default" href="/WantToSee">Want-To-See's</a>
             </p>
         </div>
         <div class="col-md-4">

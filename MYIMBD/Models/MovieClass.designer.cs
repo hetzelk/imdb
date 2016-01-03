@@ -127,9 +127,13 @@ namespace MYIMBD.Models
 		private string _PosterUrl;
 		
 		private string _Url;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
+
+        private string _MyRating;
+
+        private string _MyComments;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnP_IdChanging(int value);
@@ -424,8 +428,48 @@ namespace MYIMBD.Models
 				}
 			}
 		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MyRating", DbType = "NVarChar(MAX)")]
+        public string MyRating
+        {
+            get
+            {
+                return this._MyRating;
+            }
+            set
+            {
+                if ((this._MyRating != value))
+                {
+                    this.OnUrlChanging(value);
+                    this.SendPropertyChanging();
+                    this._MyRating = value;
+                    this.SendPropertyChanged("MyRating");
+                    this.OnUrlChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MyComments", DbType = "NVarChar(MAX)")]
+        public string MyComments
+        {
+            get
+            {
+                return this._MyComments;
+            }
+            set
+            {
+                if ((this._MyComments != value))
+                {
+                    this.OnUrlChanging(value);
+                    this.SendPropertyChanging();
+                    this._MyComments = value;
+                    this.SendPropertyChanged("MyComments");
+                    this.OnUrlChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
 		
